@@ -1,0 +1,26 @@
+<?php
+Route::get('download-skill-provider-enrollment-ack/{id}', 'SkillProvider\SkillProviderController@downloadEnrollAck')->name('download.enrollment.ack');
+Route::get('accept-skill-provider-terms', 'SkillProvider\SkillProviderController@viewTerms')->name('accept.terms');
+Route::post('accept-skill-provider-terms', 'SkillProvider\SkillProviderController@acceptTerms')->name('accept.terms');
+Route::get('skill-provider-packages', 'SkillProvider\SkillProviderController@resume_search_packages')->name('skill-provider.packages');
+Route::get('unloced-seekers', 'SkillProvider\SkillProviderController@unlocked_users')->name('skill-provider.unloced-users');
+Route::get('unlock/{user}', 'SkillProvider\SkillProviderController@unlock')->name('skill-provider.unlock');
+Route::get('skill-provider-home', 'SkillProvider\SkillProviderController@index')->name('skill-provider.home');
+Route::get('companies', 'Company\CompaniesController@company_listing')->name('skill-provider.listing');
+Route::get('enrol-skill-provider', 'SkillProvider\SkillProviderController@skillProviderEnroll')->name('skill-provider.enroll');
+Route::put('enrol-skill-provider-profile', 'SkillProvider\SkillProviderController@enrollCompanyProfile')->name('enroll.skill-provider.profile');
+Route::get('enrol-skill-provider-confirmation/{id}', 'SkillProvider\SkillProviderController@skillProviderEnrollConfirmation')->name('skill-provider.enroll.confirmation');
+Route::get('add-sd-new', 'SkillProvider\SkillProviderController@addSkillDevelopmentProgram')->name('add.skill.development');
+Route::get('skill-provider-profile', 'SkillProvider\SkillProviderController@skillProviderProfile')->name('skill-provider.profile');
+Route::post('update-skill-provider-profile', 'SkillProvider\SkillProviderController@updateSkillProviderProfile')->name('update.skill-provider.profile');
+Route::post('save-skill-provider-profile', 'SkillProvider\SkillProviderController@saveSkillProviderProfile')->name('save.skill-provider.profile');
+Route::get('skill-provider/{slug}', 'SkillProvider\SkillProviderController@skill-providerDetail')->name('skill-provider.detail');
+Route::post('contact-skill-provider-message-send', 'SkillProvider\SkillProviderController@sendContactForm')->name('contact.skill-provider.message.send');
+Route::post('contact-applicant-message-send', 'SkillProvider\SkillProviderController@sendApplicantContactForm')->name('contact.applicant.message.send');
+Route::get'skill-provider-training-calendar', 'SkillProvider\SkillProviderController@TrainingCalendar')->name('skill.provider.training.calendar');
+Route::get('skill-provider-training-program-data/{id}', 'SkillProvider\SkillProviderController@getTrainingProgramData')->name('skill.provider.training.program.data');
+Route::get('skill-provider-training-program-enrolled-data/{id}', 'SkillProvider\SkillProviderController@getTrainingProgramEnrolledData')->name('skill.provider.training.program.enrolled.data');
+Route::get('skill-provider-download-claim-report/{id}', 'SkillProvider\SkillProviderController@downloadClaimReport')->name('skill.provider.download.claim.report');
+Route::post('skill-provider-change-training-action', 'SkillProvider\SkillProviderController@changeTrainingActionSubmit')->name('skill.provider.change.training.action');
+Route::get('skill-provider-change-password', 'SkillProvider\SkillProviderController@changePassword')->name('skill.provider.change.password');
+Route::post('skill-provider-opt-out-jobseeker', 'SkillProvider\SkillProviderController@optOutJobSeeker')->name('skill.provider.opt.out.jobseeker');
