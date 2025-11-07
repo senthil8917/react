@@ -7,7 +7,6 @@ pr:
     
 variables:
 - group: Sandbox-Config
-
 stages:
 - stage: Sandbox
   displayName: "Deploy to Sandbox"
