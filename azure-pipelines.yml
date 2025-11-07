@@ -1,6 +1,10 @@
 trigger:
 - main
 
+pr:
+  branches:
+    include: [ main ]
+    
 variables:
 - group: Sandbox-Config
 
