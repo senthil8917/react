@@ -2,17 +2,18 @@ trigger:
 - main
 
 pr:
-  branches:
-    include: [ main ]
-    
+- main
+
 variables:
-- group: Sandbox-Config
-stages:
-- stage: Sandbox
-  displayName: "Deploy to Sandbox"
-  jobs:
-  - job: DeployToSandbox
-    steps:
-    - script: echo "Environment:$(environment)"
-    - script: echo "Using API:$(apiUrl)"
-    - script: echo "Deploying to Sandbox..."
+  environment: $[eq(variables['Build.Reason'], 'PullRequest')]
+  skipDeploy: $[eq(variables['Build.Reason'], 'PullRequest')]
+
+steps:
+
+- script: echo "Environment is $(environment)"
+
+- script: echo "Running tests for PR..."
+  condition: eq(variables['Build.Reason'], 'PullRequest')
+
+- script: echo "Deploying to $(environment)"
+  condition: ne(variables['skipDeploy'], true)
