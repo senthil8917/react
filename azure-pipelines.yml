@@ -11,5 +11,5 @@ stages:
   - job: DeployToSandbox
     steps:
     - script: echo "Environment:$(environment)"
-    - script: echo "Using API"
+    - script: echo "Using API:$(apiUrl)"
     - script: echo "Deploying to Sandbox..."
